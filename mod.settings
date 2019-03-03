@@ -1,0 +1,7 @@
+name        = "Alien Digest"
+source_dir  = "source"
+output_dir  = "output"
+description = [=[Alien Digest]=]
+image       = "preview.jpg"
+tag_modtype = ""
+tag_support = ""
