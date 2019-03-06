@@ -1,7 +1,9 @@
 name        = "Alien Digest"
 source_dir  = "source"
 output_dir  = "output"
-description = [=[Alien Digest]=]
+description = [=[Like recycle, but for aliens.
+Mod ID: 63ccda26]=]
 image       = "preview.jpg"
 tag_modtype = ""
 tag_support = ""
+publish_id = "63ccda26"

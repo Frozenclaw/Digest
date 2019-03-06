@@ -1,16 +1,22 @@
--- ======= Copyright (c) 2003-2011, Unknown Worlds Entertainment, Inc. All rights reserved. =======
---
--- lua\Armory.lua
---
---    Created by:   Charlie Cleveland (charlie@unknownworlds.com)
---
--- ========= For more information, visit us at http://www.unknownworlds.com =====================
+--Log("------------------Crag Loaded-------------------")
 
+Script.Load("lua/DigestMixin.lua")
 
+local networkVars =
+{
+    -- For client animations
+    healingActive = "boolean",
+    healWaveActive = "boolean",
+    
+    moving = "boolean"
+}
 
-function Crag:GetTechButtons(techId)
+AddMixinNetworkVars(DigestMixin, networkVars)
 
-    return { kTechId.HealWave, kTechId.Move, kTechId.CragHeal, kTechId.None,
-             kTechId.None, kTechId.None, kTechId.None, kTechId.Digest }
+local oldFunc = Crag.OnCreate
 
+function Crag:OnCreate()
+	oldFunc(self)
+    InitMixin(self, DigestMixin)
+    
 end

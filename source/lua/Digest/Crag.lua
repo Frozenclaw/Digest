@@ -1,7 +1,22 @@
-Log("------------------Crag Loaded-------------------")
-function Crag:GetTechButtons(techId)
+--Log("------------------Crag Loaded-------------------")
 
-    return { kTechId.HealWave, kTechId.Move, kTechId.CragHeal, kTechId.None,
-             kTechId.None, kTechId.None, kTechId.None, kTechId.Digest }
+Script.Load("lua/DigestMixin.lua")
 
+local networkVars =
+{
+    -- For client animations
+    healingActive = "boolean",
+    healWaveActive = "boolean",
+    
+    moving = "boolean"
+}
+
+AddMixinNetworkVars(DigestMixin, networkVars)
+
+local oldFunc = Crag.OnCreate
+
+function Crag:OnCreate()
+	oldFunc(self)
+    InitMixin(self, DigestMixin)
+    
 end

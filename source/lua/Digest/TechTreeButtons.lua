@@ -1,5 +1,5 @@
 -- Used Tachi's Code from Two Channel Phase Gates
-Log("------------------TechTreeButtons Loaded-------------------")
+--Log("------------------TechTreeButtons Loaded-------------------")
 local ns2_GetMaterialXYOffset = GetMaterialXYOffset
 function GetMaterialXYOffset(techId)
     if techId == kTechId.Digest then

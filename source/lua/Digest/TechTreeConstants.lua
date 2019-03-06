@@ -1,5 +1,5 @@
 -- Used Tachi's Code from Two Channel Phase Gates
-Log("------------------TechTreeConstants Loaded-------------------")
+--Log("------------------TechTreeConstants Loaded-------------------")
 local function AppendToEnum( tbl, key )
 	if rawget(tbl,key) ~= nil then
 		return
@@ -20,3 +20,5 @@ end
 
 kTechIdMax = kTechIdMax + 1
 AppendToEnum(kTechId, "Digest")
+
+kDigestCancelButtonIndex = kRecycleCancelButtonIndex
